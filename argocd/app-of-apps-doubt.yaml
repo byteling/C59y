@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-doubt
+  name: app-of-apps-doubt
   namespace: argocd
 spec:
   project: project

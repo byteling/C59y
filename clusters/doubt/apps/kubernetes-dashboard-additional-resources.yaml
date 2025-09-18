@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard-namespace
+  name: kubernetes-dashboard-additional-resources
   namespace: argocd
   annotations:
-    # ensure this namespace app is applied before the helm app (helm app can use sync-wave "1")
+    # ensure this app is applied before the helm app
     argocd.argoproj.io/sync-wave: "0"
 spec:
   project: project
   source:
     repoURL: https://github.com/byteling/C59y
-    path: apps/kubernetes-dashboard
+    path: apps/kubernetes-dashboard-additional-resources
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
