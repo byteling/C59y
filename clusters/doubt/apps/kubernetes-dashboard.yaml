@@ -11,9 +11,8 @@ spec:
     chart: kubernetes-dashboard
     targetRevision: 5.0.0
     helm:
-      valueFiles:
-        - values.yaml
-        # - values.doubt.yaml # file not found?
+      values: |
+        createNamespace: true
   destination:
     server: https://kubernetes.default.svc
     namespace: kubernetes-dashboard
