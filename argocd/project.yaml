@@ -10,3 +10,4 @@ spec:
       server: https://kubernetes.default.svc
   sourceRepos:
     - "https://github.com/byteling/C59y"
+    - "https://kubernetes.github.io/dashboard/"
