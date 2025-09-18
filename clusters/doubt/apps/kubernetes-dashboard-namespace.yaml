@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubernetes-dashboard-namespace
+  namespace: argocd
+  annotations:
+    # ensure this namespace app is applied before the helm app (helm app can use sync-wave "1")
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: project
+  source:
+    repoURL: https://github.com/byteling/C59y
+    path: apps/kubernetes-dashboard
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd # the Application resource lives in argocd namespace; it applies the Namespace manifest to the cluster
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
