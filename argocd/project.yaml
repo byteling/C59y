@@ -11,3 +11,8 @@ spec:
   sourceRepos:
     - "https://github.com/byteling/C59y"
     - "https://kubernetes.github.io/dashboard/"
+  clusterResourceWhitelist:
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRole
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
