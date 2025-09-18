@@ -1,0 +1,7 @@
+# default helm values for kubernetes-dashboard
+# add or override values as needed
+fullnameOverride: kubernetes-dashboard
+service:
+  type: ClusterIP
+ingress:
+  enabled: false

@@ -1,0 +1,6 @@
+# per-cluster overrides for prod (optional)
+fullnameOverride: kubernetes-dashboard
+ingress:
+  enabled: true
+  hosts:
+    - dashboard.example.com
