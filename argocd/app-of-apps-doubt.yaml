@@ -7,7 +7,7 @@ spec:
   project: project
   source:
     repoURL: https://github.com/byteling/C59y
-    path: clusters/cluster-doubt/apps
+    path: clusters/doubt/apps
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
