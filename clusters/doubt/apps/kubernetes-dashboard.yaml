@@ -5,15 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: project
+
   source:
-    repoURL: https://github.com/byteling/C59y
-    path: apps/kubernetes-dashboard
-    targetRevision: main
+    repoURL: https://kubernetes.github.io/dashboard/
+    chart: kubernetes-dashboard
+    targetRevision: 5.0.0
     helm:
       valueFiles:
         - values.yaml
-        - values.doubt.yaml
-      parameters: []
+        - values.prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kubernetes-dashboard
