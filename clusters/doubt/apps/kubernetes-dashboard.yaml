@@ -13,7 +13,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - values.prod.yaml
+        - values.doubt.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kubernetes-dashboard
