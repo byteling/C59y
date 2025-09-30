@@ -6,7 +6,7 @@ metadata:
 spec:
   project: project
   source:
-    repoURL: https://github.com/byteling/C59y
+    repoURL: https://github.com/byteling/kubernetes-C60
     path: clusters/doubt/apps
     targetRevision: main
   destination:

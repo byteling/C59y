@@ -9,7 +9,7 @@ spec:
     - namespace: "*"
       server: https://kubernetes.default.svc
   sourceRepos:
-    - "https://github.com/byteling/C59y"
+    - "https://github.com/byteling/kubernetes-C60"
     - "https://kubernetes.github.io/dashboard/"
   clusterResourceWhitelist:
     - group: rbac.authorization.k8s.io
