@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-objects-doubt
+  namespace: argocd
+spec:
+  project: project
+  source:
+    repoURL: https://github.com/byteling/kubernetes-C60
+    path: objects
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
