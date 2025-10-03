@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portainer
+  namespace: portainer
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  sources:
+    - chart: portainer
+      repoURL: https://portainer.github.io/k8s/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portainer
