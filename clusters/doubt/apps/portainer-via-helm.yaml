@@ -12,16 +12,11 @@ spec:
     helm:
       values: |
         service:
-          type: ClusterIP
+          type: LoadBalancer
         tls:
           force: true
         image:
           tag: lts
-        ingress:
-          enabled: true
-          ingressClassName: "nginx"
-          annotations:
-            nginx/backend-protocol: https
   destination:
     server: "https://kubernetes.default.svc"
     namespace: portainer
