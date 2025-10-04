@@ -21,7 +21,10 @@ spec:
           enabled: true
           ingressClassName: "nginx"
           annotations:
-            nginx/backend-protocol: https
+             "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS"
+          hosts:
+            - paths:
+                - path: "/"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: portainer
