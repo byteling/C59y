@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://dl.gitea.com/charts/" # Helm repo URL
     chart: gitea
-    targetRevision: 1.24.6
+    targetRevision: 12.4.0
     # helm:
     #   values: |
     #     service:
