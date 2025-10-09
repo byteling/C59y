@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://dl.gitea.com/charts/" # Helm repo URL
+    chart: gitea
+    targetRevision: 1.24.6
+    # helm:
+    #   values: |
+    #     service:
+    #       type: ClusterIP
+  destination:
+    server: "https://kubernetes.default.svc"
+    # namespace: portainer
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/template/spec/imagePullSecrets
