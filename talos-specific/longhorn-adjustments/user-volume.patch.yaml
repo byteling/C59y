@@ -1,0 +1,13 @@
+# apply as machineconfig patch
+# talosctl --nodes <NODE> patch mc --patch @user-volume.patch.yaml
+#
+# will be mounted under /var/mnt/<name>
+
+# user-volume.patch.yaml
+apiVersion: v1alpha1
+kind: UserVolumeConfig
+name: local-volume
+provisioning:
+  diskSelector:
+    match: "!system_disk"
+  maxSize: 40GB
