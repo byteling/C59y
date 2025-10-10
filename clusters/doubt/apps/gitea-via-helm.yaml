@@ -9,8 +9,14 @@ spec:
     repoURL: "https://dl.gitea.com/charts/" # Helm repo URL
     chart: gitea
     targetRevision: 12.4.0
-    # helm:
-    #   values: |
+    helm:
+      values: |
+        gitea:
+          admin:
+            username: "byteling"
+            password: "SaveToPutOnGitHubBecauseItsInitialOnlySorry"
+            email: "byteling@localhost"
+            passwordMode: initialOnlyRequireReset
     #     service:
     #       type: ClusterIP
   destination:
